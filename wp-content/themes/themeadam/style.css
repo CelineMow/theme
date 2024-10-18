@@ -1,0 +1,323 @@
+/*
+Theme Name: Adam Beniflah Theme
+Theme URI: http://adam-ben-filmmaking.ovh
+Author: Celine Morel
+Author URI: http://celine-morel-dev.fr
+Description: Un thème personnalisé pour le portfolio d'Adam Beniflah.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: adambeniflah-theme
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url(/assets/Quicksand_Light.otf) format("opentype");
+}
+
+@font-face {
+    font-family: "LeagueSpartan";
+    src: url(/assets/LeagueSpartan-Light.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Ramillas";
+    src: url(assets/Ramillas.ttf) format("truetype");
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #00001b, #141726, #00001b);
+    color: #D6E1FF;
+}
+
+.image-section {
+    position: relative;
+    height: 100vh; /* Utilisation de la hauteur de la fenêtre */
+    overflow: hidden; /* Masque tout débordement */
+}
+
+.background_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que l'image couvre toute la section */
+    transition: opacity 0.5s ease; /* Transition douce pour la disparition */
+}
+
+/* Ajout d'un flou progressif avec un dégradé */
+.image-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%; /* Appliquer le flou uniquement sur la moitié supérieure */
+    background: inherit; /* Prendre l'arrière-plan de la section */
+    transition: filter 0.5s ease; /* Transition douce pour le flou */
+    z-index: 1; /* S'assurer que ce soit au-dessus de l'image */
+    filter: blur(20px); /* Flou initial */
+    opacity: 1; /* Opacité initiale */
+}
+
+.side-nav {
+    position: fixed;
+    left: 22.5%;
+    bottom: 10px;
+    bottom: 1%;
+    width: 55%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 30px 0;
+    background: rgb(20, 23, 38, 0.3); /* Couleur de fond transparente */
+    backdrop-filter: blur(4px); /* Applique un flou sur le fond */
+    background-size: 50% 100%;
+    border: 1px solid rgb(48, 67, 132, 0.5);
+    border-radius: 15px;
+    z-index: 2;
+}
+
+.side-nav a {
+    font-family: "LeagueSpartan";
+    color: #D6E1FF;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav {
+    margin: 0 15px;
+    padding: 0 7px;
+}
+
+.fa-brands {
+    font-size: 22px;
+    margin: 0 10px;
+}
+
+.fa-rocket {
+font-size: 19px;
+margin-left: 5px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 15%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 20px;
+}
+
+.title h1 {
+    font-family: "LeagueSpartan";
+    letter-spacing: 8px;
+    text-align: left;
+    font-size: 80px;
+}
+
+.title h4 {
+    font-family: "LeagueSpartan";
+    white-space: nowrap;
+    text-align: right;
+    font-size: 18px;
+    margin-bottom: 5px;
+    padding-right: 20px;
+}
+
+.name {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.content-section {
+display: flex;
+flex-direction: row;
+padding: 50px 100px;
+}
+
+.content-section span {
+    font-family: "Ramillas";
+    text-align: left;
+    margin-bottom: 50px !important;
+    font-size: 35px !important;
+}
+
+.content-section p {
+    font-family: "Quicksand" !important;
+    text-align: justify;
+    font-size: 23px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 200px;
+}
+
+.video-container {
+    position: relative;
+    width: 1800px; /* Prend toute la largeur de l'écran */
+    height: 800px; /* Prend toute la hauteur de la fenêtre */
+    border-radius: 50%; /* Arrondit les coins */
+    overflow: hidden; /* Masque la partie de la vidéo qui dépasse */
+    border: 25px solid rgb(24, 36, 73, 0.3);
+    margin-bottom: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.video {
+    position: absolute;
+    top: 50%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
+    width: 100%; /* La vidéo occupe toute la largeur du conteneur */
+    height: 110%; /* La vidéo occupe toute la hauteur du conteneur */
+    transform: translate(-50%, -50%); /* Centre la vidéo dans le conteneur */
+    object-fit: cover; /* La vidéo couvre tout le conteneur sans déformation */
+}
+
+/* Styles spécifiques pour l'effet lumineux */
+.header-text {
+    color: #D6E1FF;
+    font-size: 3em;
+    text-align: center;
+    line-height: 1.0625;
+    font-weight: 600;
+    letter-spacing: -0.009em;
+}
+
+.glow-filter {
+    position: relative;
+    display: inline-block;
+    font-size: 25px !important; /* Maintient la taille par défaut du texte */
+    margin-bottom: 0px !important; /* Garde le bordel par-dessus du texte */
+    font-weight: 200px; /* Garde le même poids que le reste du texte */
+    letter-spacing: normal; /* Respecte l'espacement des lettres par défaut */
+    animation: onloadscale 1s ease-out forwards;
+}
+
+.glow-filter::before{
+    content: attr(data-text);
+    position: absolute;
+    pointer-events: none;
+    color: #D6E1FF;
+    background: linear-gradient(0deg, #dfe5ee 0%, #fffaf6 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: url(#glow-4);
+    -moz-filter: url(#glow-4);
+    -webkit-filter: url(#glow-4);
+    opacity: 0;
+    animation: onloadopacity 1s ease-out forwards;
+}
+
+@keyframes onloadscale {
+    24% { scale: 1; }
+    100% { scale: 1.02; }
+}
+
+@keyframes onloadopacity {
+    24% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Ajout des filtres SVG nécessaires pour l'effet lumineux */
+svg.filters {
+    height: 0;
+    width: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.contact-video-container {
+    display: flex;
+    justify-content: center;
+    height: 100vh; /* Utiliser toute la hauteur de la fenêtre */
+    width: 99vw; /* Utiliser toute la largeur de la fenêtre */
+    position: relative; /* Nécessaire pour positionner les enfants avec position: absolute */
+    overflow: hidden; /* Masque le débordement */
+}
+
+.contact-video {
+    height: 100%; /* La vidéo prend toute la hauteur */
+    width: 100%; /* La vidéo prend toute la largeur */
+    border-radius: 15px; /* Coins arrondis */
+    object-fit: cover; /* La vidéo couvre entièrement son conteneur */
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.contact-form {
+    font-family: "LeagueSpartan";
+    position: absolute; /* Positionnement absolu par rapport au conteneur parent */
+    top: 50%; /* Positionne le formulaire sous le texte */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%); /* Centre complètement */
+    background-color: rgb(17, 19, 31, 0.8); /* Fond semi-transparent */
+    color: #D6E1FF; /* Couleur du texte pour la lisibilité */
+    padding: 120px; /* Espacement interne */
+    border-radius: 50px; /* Coins arrondis */
+    z-index: 2; /* S'assure que le formulaire est au-dessus de la vidéo */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Ombre pour un effet de profondeur */
+    width: 50%;
+}
+
+.contact-form h3 {
+    color: #D6E1FF;
+    font-size: 50px;
+    text-align: center; /* Centre le titre du formulaire */
+    margin-bottom: 80px; /* Espacement en bas */
+}
+
+.contact-form label {
+    color: #D6E1FF;
+    font-size: 20px;
+    text-align: center;
+    display: block; /* Affiche chaque label sur une nouvelle ligne */
+    margin-top: 10px; /* Espacement au-dessus de chaque label */
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: #D6E1FF;
+    width: 100%; /* Largeur à 100% pour remplir le conteneur */
+    padding: 10px 10px; /* Espacement interne */
+    margin: 15px; /* Espacement au-dessus des champs */
+    border: none; /* Supprime la bordure par défaut */
+    border-radius: 25px; /* Coins arrondis */
+    font-family: 'Quicksand', sans-serif; /* Garde la police du site */
+    font-size: 20px; /* Taille de la police */
+}
+
+.button-container {
+    display: flex; /* Active Flexbox */
+    justify-content: flex-end; /* Aligne le contenu à droite */
+}
+
+.contact-form button {
+    background-color: #1D2E62; /* Couleur de fond du bouton */
+    font-size: 18px;
+    color: #D6E1FF; /* Couleur du texte du bouton */
+    border: none; /* Supprime la bordure par défaut */
+    border-radius: 15px; /* Coins arrondis pour le bouton */
+    padding: 10px 20px; /* Espacement interne pour le bouton */
+    margin-top: 15px; /* Espacement au-dessus du bouton */
+    cursor: pointer; /* Change le curseur lors du survol */
+    transition: background-color 0.3s; /* Transition douce pour le changement de couleur */
+}
+
+.contact-form button:hover {
+    background-color: #253974; /* Couleur du bouton au survol */
+}
