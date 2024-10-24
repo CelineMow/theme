@@ -1,5 +1,5 @@
 <?php
-define( 'WP_CACHE', true );
+define('WP_CACHE', true);
 
 /**
  * The base configuration for WordPress
@@ -79,7 +79,9 @@ $table_prefix  = 'mod237_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', false);
 
 /* That's all, stop editing! Happy blogging. */
 

@@ -1,12 +1,9 @@
-<?php
-/*
-Template Name: Theatre Page
-*/
-get_header(); ?>
+<?php get_header(); ?>
 
-<div class="content-section">
+<main>
     <h1>Théâtre</h1>
-    <!-- Ajoute ton contenu de théâtre ici -->
-</div>
+    <p>Découvrez mes travaux en théâtre.</p>
+    <!-- Ajoute le contenu spécifique ici -->
+</main>
 
 <?php get_footer(); ?>

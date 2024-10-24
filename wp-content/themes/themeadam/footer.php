@@ -1,7 +1,21 @@
 <footer id="colophon" class="site-footer">
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="footer.css">
+    </head>
+
+    <body>
+
+    </body>
+
+    </html>
     <div class="side-nav">
         <a class="nav" href="#accueil">ACCUEIL</a>
-        <a class="nav" href="#">REALISATIONS VIDEOS</a>
+        <a class="nav" href="#page-video">REALISATIONS VIDEOS</a>
         <a class="nav" href="#">THEATRE</a>
         <a class="nav" href="#">PHOTOS</a>
         <a class="nav" href="#a-propos">A PROPOS</a>
