@@ -52,24 +52,3 @@ function onPlayerReady(event) {
         player.getIframe().contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
     });
 }
-
-// category filter
-document.querySelectorAll('.category-filter a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const filter = link.getAttribute('data-filter');
-
-        // Gérer la classe active
-        document.querySelectorAll('.category-filter a').forEach(btn => btn.classList.remove('active'));
-        link.classList.add('active');
-
-        // Afficher ou cacher les vidéos
-        document.querySelectorAll('.video-item').forEach(item => {
-            if (filter === '*' || item.classList.contains(filter.substring(1))) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    });
-});
